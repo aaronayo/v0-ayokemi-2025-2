@@ -628,7 +628,6 @@ export default function GalleryPage() {
                   </PaginationItem>
                   </PaginationContent>
                 </Pagination>}
-              </div>
             </div>
           )}
         </div>
