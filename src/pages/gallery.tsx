@@ -342,7 +342,7 @@ const galleryImages: GalleryImage[] = [
 ]
 
 const GALLERY_CATEGORIES = ["Pre-wedding", "Engagement", "Church wedding", "Reception"]
-const IMAGES_PER_PAGE = 10
+const IMAGES_PER_PAGE = 35
 const GUEST_PHOTOS_PER_PAGE = 7
 
 export default function GalleryPage() {
