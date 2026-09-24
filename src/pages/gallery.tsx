@@ -342,8 +342,8 @@ const galleryImages: GalleryImage[] = [
 ]
 
 const GALLERY_CATEGORIES = ["Pre-wedding", "Engagement", "Church wedding", "Reception"]
-const IMAGES_PER_PAGE = 10
-const GUEST_PHOTOS_PER_PAGE = 7
+const IMAGES_PER_PAGE = 35
+const GUEST_PHOTOS_PER_PAGE = 35
 
 export default function GalleryPage() {
   const [isPageLoaded, setIsPageLoaded] = useState(false)
@@ -596,9 +596,12 @@ export default function GalleryPage() {
           )}
 
           {/* Gallery Pagination */}
-          {totalGalleryPages > 1 && (
-            <div className="mt-12 flex justify-center">
-              <Pagination>
+          {filteredImages.length > 0 && (
+            <div className="mt-12 flex flex-col items-center gap-4">
+              <p className="text-xs font-mono tracking-wider text-gray-500" aria-live="polite">
+                {paginatedGalleryImages.length} / {filteredImages.length} images
+              </p>
+              {totalGalleryPages > 1 && <Pagination>
                 <PaginationContent>
                   <PaginationItem>
                     <PaginationPrevious
@@ -623,8 +626,9 @@ export default function GalleryPage() {
                       className={galleryPage === totalGalleryPages ? "pointer-events-none opacity-50" : ""}
                     />
                   </PaginationItem>
-                </PaginationContent>
-              </Pagination>
+                  </PaginationContent>
+                </Pagination>}
+              </div>
             </div>
           )}
         </div>
@@ -690,9 +694,11 @@ export default function GalleryPage() {
                       ))}
                     </div>
 
-                    {totalPages > 1 && (
-                      <div className="flex justify-center mb-8">
-                        <Pagination>
+                    <div className="flex flex-col items-center gap-4 mb-8">
+                      <p className="text-xs font-mono tracking-wider text-gray-500" aria-live="polite">
+                        {paged.length} / {filtered.length} images
+                      </p>
+                      {totalPages > 1 && <Pagination>
                           <PaginationContent>
                             <PaginationItem>
                               <PaginationPrevious
@@ -718,10 +724,10 @@ export default function GalleryPage() {
                               />
                             </PaginationItem>
                           </PaginationContent>
-                        </Pagination>
+                        </Pagination>}
                       </div>
-                    )}
                   </>
+
                 )
               })()}
             </>
