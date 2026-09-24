@@ -343,7 +343,7 @@ const galleryImages: GalleryImage[] = [
 
 const GALLERY_CATEGORIES = ["Pre-wedding", "Engagement", "Church wedding", "Reception"]
 const IMAGES_PER_PAGE = 35
-const GUEST_PHOTOS_PER_PAGE = 7
+const GUEST_PHOTOS_PER_PAGE = 35
 
 export default function GalleryPage() {
   const [isPageLoaded, setIsPageLoaded] = useState(false)
